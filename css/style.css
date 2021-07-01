@@ -9,9 +9,25 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
     border: 1px dashed black;
+    display: flex;
+}
+
+.left-side {
+    flex-grow: 1;
+    border-right: 1px dashed black;
+}
+
+.right-side {
+    padding: 15px;
+    align-self: center;
+}
+
+h3 {
+    transform: rotate(-90deg);
+    font-size: 35px;
 }
 
 h1 {

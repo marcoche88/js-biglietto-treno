@@ -51,4 +51,4 @@ km.innerHTML = travelDistance + " Km";
 age.innerHTML = passengerAge + " anni";
 fullPrice.innerHTML = ticketPrice.toFixed(2) + " €";
 discountPrice.innerHTML = discount + "%";
-price.innerHTML = "Il prezzo finale del biglietto è: " + ticketDiscount.toFixed(2) + " €";
+price.innerHTML = "PREZZO FINALE: " + ticketDiscount.toFixed(2) + " €";
