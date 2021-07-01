@@ -20,11 +20,22 @@ var discountPrice = document.getElementById("discount-price");
 var price = document.getElementById("price");
 
 // input km e età
-var travelDistance = parseInt(prompt("Inserire numero Km del viaggio"));
-var passengerAge = parseInt(prompt("Inserire età del passeggero"));
+var travelDistance = parseFloat(prompt("Inserire numero Km del viaggio").trim());
+var passengerAge = parseInt(prompt("Inserire età del passeggero").trim());
 
 console.log("travelDistance",travelDistance, typeof travelDistance);
 console.log("passengerAge", passengerAge, typeof passengerAge);
+
+// validazione input
+if (isNaN(travelDistance) || travelDistance < 1) {
+    alert("Distanza non valida");
+    window.location.reload();
+}
+
+if (isNaN(passengerAge) || passengerAge < 1) {
+    alert("Età non valida");
+    window.location.reload();
+}
 
 // calcolo prezzo biglietto intero 
 var ticketPrice = travelDistance * kmPrice;
@@ -47,7 +58,7 @@ var ticketDiscount = ticketPrice - (ticketPrice * discount / 100);
 console.log("ticketDiscount", ticketDiscount, typeof ticketPrice);
 
 // stampa prezzo scontato
-km.innerHTML = travelDistance + " Km";
+km.innerHTML = travelDistance.toFixed(2) + " Km";
 age.innerHTML = passengerAge + " anni";
 fullPrice.innerHTML = ticketPrice.toFixed(2) + " €";
 discountPrice.innerHTML = discount + "%";
