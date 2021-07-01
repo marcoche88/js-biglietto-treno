@@ -42,7 +42,7 @@ var ticketPrice = travelDistance * kmPrice;
 
 console.log("ticketPrice", ticketPrice, typeof ticketPrice);
 
-// verifica sconto per età passegero
+// verifica sconto per età passeggero
 if (passengerAge < 18) {
     discount = 20;
 
