@@ -10,6 +10,14 @@ L'output del prezzo finale va stampato in forma umana (con massimo due decimali,
 per indicare centesimi sul prezzo). Questo richiederà un minimo di ricerca.
 */
 
+// variabili
+var kmPrice = 0.21;
+var discount = 0;
+var km = document.getElementById("km");
+var age = document.getElementById("age");
+var fullPrice = document.getElementById("full-price");
+var discountPrice = document.getElementById("discount-price");
+var price = document.getElementById("price");
 
 // input km e età
 var travelDistance = parseInt(prompt("Inserire numero Km del viaggio"));
@@ -19,14 +27,11 @@ console.log("travelDistance",travelDistance, typeof travelDistance);
 console.log("passengerAge", passengerAge, typeof passengerAge);
 
 // calcolo prezzo biglietto intero 
-var kmPrice = 0.21;
 var ticketPrice = travelDistance * kmPrice;
 
 console.log("ticketPrice", ticketPrice, typeof ticketPrice);
 
 // verifica sconto per età passegero
-var discount = 0;
-
 if (passengerAge < 18) {
     discount = 20;
 
@@ -42,5 +47,8 @@ var ticketDiscount = ticketPrice - (ticketPrice * discount / 100);
 console.log("ticketDiscount", ticketDiscount, typeof ticketPrice);
 
 // stampa prezzo scontato
-var price = document.getElementById("price");
-price.innerHTML = "Il prezzo del biglietto è: " + ticketDiscount.toFixed(2) + " €";
+km.innerHTML = travelDistance + " Km";
+age.innerHTML = passengerAge + " anni";
+fullPrice.innerHTML = ticketPrice.toFixed(2) + " €";
+discountPrice.innerHTML = discount + "%";
+price.innerHTML = "Il prezzo finale del biglietto è: " + ticketDiscount.toFixed(2) + " €";
